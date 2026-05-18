@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Black Launcher | Black Hold Studios</title>
+    <title>Orbit Client | Orbit Crew Oficial</title>
     
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
@@ -20,254 +20,205 @@
         <div class="container header-content">
             
             <div class="studio-brand" onclick="openView('home')">
-                <img src="assets/img/logo.png" alt="Black Hold Studios Logo" style="height: 50px; width: auto; object-fit: contain;">
+                <img src="assets/img/logo.png" alt="Orbit Crew Logo" style="height: 48px; width: auto; object-fit: contain; filter: drop-shadow(0 0 8px rgba(255,255,255,0.2));">
             </div>
 
             <div style="display: flex; align-items: center; gap: 2rem;">
                 <nav class="nav-menu">
-                    <button class="nav-link active" onclick="openView('home')" id="btn-home">Inicio</button>
-                    <button class="nav-link" onclick="openView('projects')" id="btn-projects">Proyectos</button>
-                    <button class="nav-link" onclick="openView('contact')" id="btn-contact">Contacto</button>
+                    <button class="nav-link active" id="btn-home" onclick="openView('home')">Inicio</button>
+                    <button class="nav-link" id="btn-projects" onclick="openView('projects')">Instancias</button>
+                    <button class="nav-link" id="btn-download" onclick="openView('download')">Descargas</button>
                 </nav>
 
                 <div class="lang-dropdown">
                     <button class="lang-btn" onclick="toggleLangMenu()">
-                        <i class="fas fa-globe"></i> <span>ES</span>
+                        <i class="fas fa-globe"></i> <span id="current-lang">ES</span> <i class="fas fa-chevron-down" style="font-size: 0.8rem; opacity: 0.7;"></i>
                     </button>
-                    <div class="lang-menu" id="langMenu">
-                        <a href="#" class="lang-item"><img src="https://flagcdn.com/w20/us.png" alt="EN"> English</a>
-                        <a href="#" class="lang-item active"><img src="https://flagcdn.com/w20/es.png" alt="ES"> Español</a>
+                    <div class="lang-menu" id="lang-menu">
+                        <a href="#" class="lang-item" onclick="changeLanguage('es')">Español</a>
+                        <a href="#" class="lang-item" onclick="changeLanguage('en')">English</a>
+                        <a href="#" class="lang-item" onclick="changeLanguage('fr')">Français</a>
+                        <a href="#" class="lang-item" onclick="changeLanguage('pt')">Português</a>
+                        <a href="#" class="lang-item" onclick="changeLanguage('it')">Italiano</a>
                     </div>
                 </div>
             </div>
+
         </div>
     </header>
 
-    <main id="main-content">
-        
-        <div id="view-home" class="view-section active-view">
-            <section id="about" class="about-section">
-                <div class="container about-container">
-                    <div class="about-text fade-in-up">
-                        <h1 class="product-highlight">Black Launcher</h1>
-                        
-                        <p class="subtitle">La revolución de tu experiencia en tus servidores de minecraft.</p>
-                        
-                        <p class="bio">
-                            Diseñado meticulosamente para ofrecer rendimiento y estética excepcionales.
-                            Inspirado en la excelencia, Black Hold Studios creó el launcher definitivo para
-                            gestionar tus mods y optimizar tu experiencia de juego.
-                        </p>
+    <main class="container" style="margin-top: 2rem; flex: 1;">
 
+        <section id="view-home" class="view-section active-view">
+            <div class="about-section">
+                <div class="about-container">
+                    
+                    <div class="about-text">
                         <div class="comparison-badge">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Calidad Premium &bull; Código Privado &bull; Rendimiento Superior</span>
+                            <i class="fas fa-satellite-dish"></i> Evolución Tecnológica Activa
                         </div>
-                        <br>
-
+                        <h1 class="product-highlight">ORBIT<br>CLIENT</h1>
+                        <p class="subtitle">La evolución premium en optimización y gestión de instancias.</p>
+                        <p class="bio">
+                            Diseñado bajo la arquitectura de vanguardia de Orbit Crew. Un entorno monocromático impecable, sincronización remota ultrarrápida en tiempo real y seguridad encriptada de grado militar para tu ecosistema de mods.
+                        </p>
                         <div class="button-group">
-                            <button onclick="openView('download')" class="cta-button">
-                                <i class="fas fa-download"></i> Descargar Cliente
+                            <button class="cta-button" onclick="openView('download')">
+                                <i class="fas fa-download"></i> Obtener Cliente
                             </button>
-                            <a href="https://discord.gg/kpsKv395GA" target="_blank" class="cta-button secondary">
-                                <i class="fab fa-discord"></i> Comunidad Discord
-                            </a>
+                            <button class="cta-button secondary" onclick="openView('projects')">
+                                <i class="fas fa-cubes"></i> Ver Instancias
+                            </button>
                         </div>
                     </div>
 
-                    <div class="about-image fade-in-up delay-200">
+                    <div class="about-image">
                         <div class="image-wrapper">
-                            <i class="fas fa-rocket logo-placeholder"></i>
+                            <i class="fas fa-circle-notch logo-placeholder"></i>
                         </div>
                     </div>
+
                 </div>
-            </section>
+            </div>
 
             <div class="marquee-container">
                 <div class="marquee-track">
-                    <div class="marquee-content">
-                        Black Hold Studios <span class="dot">•</span> Premium Experience <span class="dot">•</span> 
-                        Optimización Extrema <span class="dot">•</span> Python Core <span class="dot">•</span> 
+                    <span class="marquee-content">Orbit Crew Ecosystem <span class="dot">•</span> Premium Performance <span class="dot">•</span> Remote Management Enabled <span class="dot">•</span> Decrypted Vault Secure</span>
+                    <span class="marquee-content">Orbit Crew Ecosystem <span class="dot">•</span> Premium Performance <span class="dot">•</span> Remote Management Enabled <span class="dot">•</span> Decrypted Vault Secure</span>
+                </div>
+            </div>
+
+            <div class="projects-section fade-in-up">
+                <div class="section-header">
+                    <h3>Ingeniería del Cliente</h3>
+                    <p>Tecnología avanzada integrada en una interfaz de cristal translúcido.</p>
+                </div>
+                
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="card-icon"><i class="fas fa-shield-halved"></i></div>
+                        <h3>Bóveda de Seguridad</h3>
+                        <p>Los mods y credenciales se procesan desencriptándose estrictamente en memoria y directo al disco, protegiendo la identidad del software.</p>
                     </div>
-                    <div class="marquee-content">
-                        Black Hold Studios <span class="dot">•</span> Premium Experience <span class="dot">•</span> 
-                        Optimización Extrema <span class="dot">•</span> Python Core <span class="dot">•</span> 
+                    <div class="project-card">
+                        <div class="card-icon"><i class="fas fa-cloud-arrow-down"></i></div>
+                        <h3>Sincronización Remota</h3>
+                        <p>Actualizaciones inmediatas mediante lectura secuencial de configuraciones desde nuestros servidores centrales indexados.</p>
+                    </div>
+                    <div class="project-card">
+                        <div class="card-icon"><i class="fas fa-language"></i></div>
+                        <h3>Estándar Global</h3>
+                        <p>Arquitectura completamente multilenguaje nativa, preparada para desplegarse globalmente en 5 idiomas diferentes en un clic.</p>
                     </div>
                 </div>
             </div>
 
-            <section id="ai-tools" class="ai-section fade-in-up">
+            <div class="ai-section fade-in-up delay-200">
                 <div class="container">
                     <div class="section-header">
-                        <h3><i class="fas fa-sparkles" style="color: var(--secondary-accent);"></i> Centro de IA Black Hold</h3>
-                        <p>Usa nuestra Inteligencia Artificial para encontrar los mejores mods compatibles.</p>
+                        <h3>El Oráculo de Orbit</h3>
+                        <p>¿No sabes qué jugar? Deja que nuestra IA analice tus gustos y ensamble tu configuración ideal.</p>
                     </div>
-
                     <div class="ai-grid">
                         <div class="ai-input-area">
-                            <h4><i class="fas fa-search"></i> Oráculo de Mods</h4>
-                            <p style="color:var(--text-muted); margin-bottom:1rem; font-size:0.9rem;">
-                                Describe tu estilo de juego (ej: "RPG Medieval con dragones").
-                            </p>
-                            <textarea id="aiPrompt" class="ai-textarea" placeholder="Escribe aquí..."></textarea>
-                            <button onclick="generateMods()" class="cta-button ai-btn" style="width:100%; justify-content: center;">
-                                Consultar a la IA <div id="loader" class="loader"></div>
+                            <h4><i class="fas fa-terminal"></i> Parámetros de Entrada</h4>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">Describe qué tipo de aventura buscas (ej: fantasía medieval, automatización técnica, terror de supervivencia...)</p>
+                            <textarea id="ai-prompt" class="ai-textarea" placeholder="Escribe tus preferencias aquí..."></textarea>
+                            <button class="cta-button" onclick="consultAI()">
+                                <span>Consultar Oráculo</span>
+                                <div class="loader" id="ai-loader"></div>
                             </button>
                         </div>
-
                         <div class="ai-output-area">
-                            <h4><i class="fas fa-list"></i> Recomendaciones</h4>
-                            <div id="aiResult" class="ai-result">
-                                <span style="opacity: 0.5;">Los resultados aparecerán aquí...</span>
+                            <h4><i class="fas fa-microchip"></i> Configuración Recomendada</h4>
+                            <div id="ai-output" style="color: var(--text-muted); font-size: 1rem; line-height: 1.8;">
+                                <span style="opacity: 0.5; font-style: italic;">El Oráculo está esperando tus instrucciones...</span>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
 
-            <section id="features" class="projects-section">
-                <div class="container">
-                    <div class="section-header fade-in-up">
-                        <h3>Ingeniería de Vanguardia</h3>
-                        <p>No es solo un launcher, es el motor de tu próxima aventura.</p>
-                    </div>
-                    
-                    <div class="projects-grid">
-                        <div class="project-card fade-in-up delay-200">
-                            <div class="card-icon"><i class="fas fa-microchip"></i></div>
-                            <div class="card-content">
-                                <h3>Rendimiento Nativo</h3>
-                                <p>Desarrollado en Python con librerías de bajo nivel para asegurar máximos FPS.</p>
-                            </div>
-                        </div>
-                        <div class="project-card fade-in-up delay-300">
-                            <div class="card-icon"><i class="fas fa-shield-alt"></i></div>
-                            <div class="card-content">
-                                <h3>Seguridad Black Hold</h3>
-                                <p>Protección integrada de instancias y cuentas.</p>
-                            </div>
-                        </div>
-                        <div class="project-card fade-in-up delay-300">
-                            <div class="card-icon"><i class="fas fa-gem"></i></div>
-                            <div class="card-content">
-                                <h3>Estética Premium</h3>
-                                <p>Interfaz visual minimalista, oscura y centrada en el usuario.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
+            <div class="contact-box fade-in-up delay-300">
+                <h3>Comunidad de Desarrollo</h3>
+                <p>¿Quieres reportar un bug, sugerir características o unirte a los eventos oficiales del Orbit Crew?</p>
+                <a href="https://discord.gg/orbitcrew" target="_blank" class="cta-button secondary" style="border-color: rgba(255,255,255,0.15)">
+                    <i class="fab fa-discord"></i> Conectarse a Discord
+                </a>
+            </div>
+        </section>
 
-
-        <div id="view-projects" class="view-section">
+        <section id="view-projects" class="view-section">
             <div class="carousel-container">
-                <div class="section-header" style="position: relative; z-index: 2; margin-bottom: 2rem;">
-                    <h2 style="font-size:3rem;">Nuestros Proyectos</h2>
-                </div>
-
-                <button class="carousel-nav prev" onclick="moveSlide(-1)"><i class="fas fa-chevron-left"></i></button>
-                <button class="carousel-nav next" onclick="moveSlide(1)"><i class="fas fa-chevron-right"></i></button>
-
+                <button class="carousel-nav prev" onclick="moveCarousel('prev')"><i class="fas fa-chevron-left"></i></button>
+                
                 <div class="carousel-track-container">
-                    <ul class="carousel-track" id="gallery-track">
+                    <ul class="carousel-track" id="carousel-track">
                         <li class="carousel-slide current-slide">
-                            <img src="assets/img/image_cb999d.png" alt="Pitcharcity" onerror="this.src='https://placehold.co/1200x600/111/6200ea?text=Pitcharcity:+Magic+World'">
+                            <img src="assets/img/slide1.jpg" alt="Vanilla Evolution">
                             <div class="slide-caption">
-                                <h3>Pitcharcity: Magic World</h3>
-                                <p>Llega la magia a Pitcharcity, un nuevo mundo por explorar.</p>
+                                <h3>Vanilla Evolution</h3>
+                                <p>Optimización absoluta sobre el entorno base con mejoras visuales monocromáticas y rendimiento pulido.</p>
                             </div>
                         </li>
                         <li class="carousel-slide">
-                            <img src="assets/img/image_cbb103.png" alt="Revolution" onerror="this.src='https://placehold.co/1200x600/111/00e5ff?text=Pitcharcity:+Revolution'">
+                            <img src="assets/img/slide2.jpg" alt="Orbit Tech Vault">
                             <div class="slide-caption">
-                                <h3>Pitcharcity: Revolution Vol 4</h3>
-                                <p>Cuarta entrega de la saga Revolution.</p>
+                                <h3>Orbit Tech Vault</h3>
+                                <p>Automatización industrial masiva avanzada. Ingeniería pesada sin pérdidas de frames de memoria.</p>
                             </div>
                         </li>
                         <li class="carousel-slide">
-                            <img src="assets/img/image_cbb0df.png" alt="Aterraria" onerror="this.src='https://placehold.co/1200x600/111/purple?text=Aterraria:+Space'">
+                            <img src="assets/img/slide3.jpg" alt="Anarchy Core">
                             <div class="slide-caption">
-                                <h3>Aterraria: Space & Spells</h3>
-                                <p>Vuelve el terror pero con planetas y magia.</p>
+                                <h3>Anarchy Core</h3>
+                                <p>Entorno competitivo de alta fidelidad con protección de red integrada y carga secuencial balanceada.</p>
                             </div>
                         </li>
                     </ul>
                 </div>
 
+                <button class="carousel-nav next" onclick="moveCarousel('next')"><i class="fas fa-chevron-right"></i></button>
+
                 <div class="carousel-nav-dots" id="carousel-dots">
-                    <button class="current-dot"></button>
-                    <button></button>
-                    <button></button>
+                    <button class="current-dot" onclick="jumpToSlide(0)"></button>
+                    <button onclick="jumpToSlide(1)"></button>
+                    <button onclick="jumpToSlide(2)"></button>
                 </div>
             </div>
-        </div>
+        </section>
 
+        <section id="view-download" class="view-section">
+            <div class="download-card">
+                <div class="card-icon" style="font-size: 3.5rem; margin-bottom: 1rem;"><i class="fas fa-box-open"></i></div>
+                <h2 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 5px;">Desplegar Orbit Client</h2>
+                <div class="download-version">PRODUCCIÓN ESTABLE v2.0.4</div>
+                
+                <p style="color: var(--text-muted); max-width: 500px; margin: 0 auto 1.5rem auto;">
+                    Descarga el ejecutable nativo del cliente con el nuevo panel administrativo y soporte de instancias en la nube integrado.
+                </p>
 
-        <div id="view-contact" class="view-section">
-            <div class="container subpage-container">
-                <div class="section-header">
-                    <p>&nbsp;</p>
-                    <h2 style="font-size:3rem; margin-bottom:1rem;">Contacto & Comunidad</h2>
-                    <p style="color:var(--text-muted);">¿Tienes dudas? Estamos aquí para ayudarte.</p>
-                </div>
+                <a href="#" class="download-btn-main">
+                    <i class="fab fa-windows"></i> Descargar para Windows (x64)
+                </a>
 
-                <div class="contact-box">
-                    <i class="fab fa-discord" style="font-size: 4rem; color: #5865F2; margin-bottom: 1.5rem;"></i>
-                    <h3>Únete a nuestro Discord</h3>
-                    <p style="margin-bottom: 2rem;">Soporte rápido y comunidad activa.</p>
-                    <a href="https://discord.gg/kpsKv395GA" target="_blank" class="cta-button">Unirse al Servidor</a>
-                </div>
-            </div>
-        </div>
-
-        <div id="view-download" class="view-section">
-            <div class="container subpage-container">
-                <div class="section-header">
-                    <p>&nbsp;</p>
-                    <h2 style="font-size:3rem; margin-bottom:1rem;">Obtener Black Launcher</h2>
-                    <p style="color:var(--text-muted);">Elige tu plataforma y comienza tu aventura hoy mismo.</p>
-                </div>
-
-                <div class="download-card fade-in-up">
-                    <div class="download-version">Versión Estable 2.2.0 • Actualizado Enero 2026</div>
-                    
-                    <div class="download-image-container" style="display: flex; justify-content: center; margin-bottom: 2rem;">
-                        <img src="assets/img/image_cb929c.png" 
-                        alt="Previsualización de Descarga" 
-                        style="max-width: 450px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-                    </div>
-                    
-                    <p style="color:var(--text-muted); margin-bottom:2rem; max-width:600px; margin-left:auto; margin-right:auto;">
-                        Al descargar, aceptas nuestros Términos de Servicio. Requiere Java 17 o superior.
-                    </p>
-
-                    <a href="https://github.com/Di-Innocentis/Prueba/releases/download/launcher-2.2/Instalador_BlackLauncher.exe" class="download-btn-main">
-                        <i class="fab fa-windows"></i> Descargar para Windows
-                    </a>
-
-                    <div class="download-options">
-                        <a href="#" class="dl-option"><i class="fab fa-apple"></i> macOS</a>
-                        <a href="#" class="dl-option"><i class="fab fa-linux"></i> Linux</a>
-                        <a href="#" class="dl-option"><i class="fas fa-file-archive"></i> Portable</a>
-                    </div>
+                <div class="download-options">
+                    <a href="#" class="dl-option"><i class="fab fa-apple"></i> macOS Installer</a>
+                    <a href="#" class="dl-option"><i class="fab fa-linux"></i> Linux Universal AppImage</a>
+                    <a href="#" class="dl-option"><i class="fas fa-code-branch"></i> Código Fuente (GitHub)</a>
                 </div>
             </div>
-        </div>
-
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
+        </section>
 
     </main>
 
     <footer class="main-footer">
         <div class="container">
-            <p>&copy; 2026 <strong>Black Hold Studios</strong>. Todos los derechos reservados.</p>
+            <p>&copy; 2026 Orbit Crew. Todos los derechos reservados. Todas las marcas de identidad tecnológica e infraestructura de red están protegidas bajo leyes internacionales de propiedad intelectual.</p>
             <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
                 <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                <a href="https://discord.gg/kpsKv395GA" target="_blank" class="social-link"><i class="fab fa-discord"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
     </footer>
@@ -277,33 +228,39 @@
     </div>
 
     <div id="modal-review" class="modal-overlay">
-        <div class="modal-box review-box">
+        <div class="modal-box">
             <button class="close-icon" onclick="closeModal('review')"><i class="fas fa-times"></i></button>
             
-            <h3>Leave a Review</h3>
-            <p class="modal-desc">Tell us what you think about Black Launcher!</p>
-            <p style="font-size:0.9rem; margin-bottom:0.5rem; color:#ccc;">Rating</p>
+            <h3>Enviar Calificación</h3>
+            <p class="modal-desc">Tu feedback optimiza directamente los módulos de desarrollo de Orbit Client.</p>
             
-            <div class="rating-stars">
-                <i class="far fa-star" data-val="1"></i>
-                <i class="far fa-star" data-val="2"></i>
-                <i class="far fa-star" data-val="3"></i>
-                <i class="far fa-star" data-val="4"></i>
-                <i class="far fa-star" data-val="5"></i>
+            <div class="rating-stars" id="rating-container">
+                <i class="far fa-star" data-val="1" onclick="setRating(1)"></i>
+                <i class="far fa-star" data-val="2" onclick="setRating(2)"></i>
+                <i class="far fa-star" data-val="3" onclick="setRating(3)"></i>
+                <i class="far fa-star" data-val="4" onclick="setRating(4)"></i>
+                <i class="far fa-star" data-val="5" onclick="setRating(5)"></i>
             </div>
 
-            <div class="modal-body">
-                <label>Name</label>
-                <input type="text" class="input-dark" placeholder="Your name (optional)">
+            <div class="modal-body" style="margin-top: 1.5rem;">
+                <div style="margin-bottom: 1.2rem;">
+                    <label for="review-name">Desarrollador / Usuario</label>
+                    <input type="text" id="review-name" class="input-dark" placeholder="Tu nombre o nick de Minecraft">
+                </div>
                 
-                <label style="margin-top:1rem;">Comment</label>
-                <textarea class="input-dark area" placeholder="Share your experience..."></textarea>
+                <div>
+                    <label for="review-comment">Reporte / Experiencia</label>
+                    <textarea id="review-comment" class="input-dark area" placeholder="¿Cómo calificarías el rendimiento del launcher?..."></textarea>
+                </div>
+                
+                <button class="btn-action review-submit" onclick="submitReview()">
+                    Enviar Módulo de Calificación
+                </button>
             </div>
-
-            <button class="btn-action review-submit">Submit Review</button>
         </div>
     </div>
 
     <script src="scripts.js"></script>
 </body>
+
 </html>
