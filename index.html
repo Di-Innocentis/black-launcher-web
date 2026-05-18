@@ -20,7 +20,7 @@
             --text-muted: #aaaaaa;
             --font-pixel: 'VT323', monospace;
             --font-body: 'Outfit', sans-serif;
-            --font-title: 'Press Start 2P', monospace; /* Para títulos de series y logos */
+            --font-title: 'Press Start 2P', monospace;
         }
 
         * {
@@ -97,7 +97,7 @@
         }
         
         .logo img {
-            height: 40px; /* Ajusta esto según el tamaño de tu logo */
+            height: 40px; 
             object-fit: contain;
         }
 
@@ -107,7 +107,7 @@
             align-items: center;
         }
 
-        .nav-links a {
+        .nav-links a.nav-item {
             color: var(--text-main);
             text-decoration: none;
             font-family: var(--font-pixel);
@@ -117,7 +117,7 @@
             text-transform: uppercase;
         }
 
-        .nav-links a:hover {
+        .nav-links a.nav-item:hover {
             color: var(--primary-green);
         }
 
@@ -131,11 +131,13 @@
             font-size: 1rem !important;
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 8px;
             text-transform: none !important;
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
+            text-decoration: none;
         }
 
         .btn-download:hover {
@@ -224,7 +226,7 @@
             justify-content: flex-end;
             padding: 20px;
             border: 1px solid rgba(255,255,255,0.05);
-            background-color: #111; /* Color de fondo base por si no carga la imagen */
+            background-color: #111; 
         }
 
         .project-card:hover {
@@ -271,7 +273,7 @@
             text-shadow: 1px 1px 2px #000;
         }
 
-        /* Tooltip Eufonia Style */
+        /* Tooltip Hover Style */
         .tooltip-stats {
             position: absolute;
             top: 50%; left: 50%;
@@ -496,7 +498,7 @@
         }
 
         .btn-discord {
-            background-color: #e67e22; /* Naranja estilo Discord de la imagen */
+            background-color: #e67e22; 
             color: #fff;
             font-family: var(--font-title);
             font-size: 0.9rem;
@@ -540,7 +542,7 @@
         }
 
         .btn-server {
-            background-color: #3498db; /* Azul estilo botón server */
+            background-color: #3498db; 
             color: #fff;
             font-family: var(--font-title);
             font-size: 0.9rem;
@@ -581,13 +583,12 @@
 
     <header>
         <div class="logo" onclick="navigate('home')">
-            <!-- AQUÍ VA TU LOGO PEQUEÑO PARA LA BARRA DE NAVEGACIÓN -->
             <img src="assets/orbit_logo_nav.png" alt="Orbit Crew Logo">
         </div>
         <nav class="nav-links">
-            <a onclick="navigate('home')">Inicio</a>
-            <a onclick="navigate('home')">Proyectos</a>
-            <a onclick="navigate('about')">About</a>
+            <a class="nav-item" onclick="navigate('home')">Inicio</a>
+            <a class="nav-item" onclick="navigate('home')">Proyectos</a>
+            <a class="nav-item" onclick="navigate('about')">About</a>
             <button onclick="navigate('download')" class="btn-download">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                 Descargar Cliente
@@ -599,7 +600,6 @@
         <!-- VISTA: INICIO / PROYECTOS -->
         <section id="home" class="view active">
             <div class="hero-section">
-                <!-- AQUÍ VA TU LOGO GRANDE PRINCIPAL PARA EL CENTRO -->
                 <img src="assets/orbit_logo_hero.png" alt="Orbit Client Logo" class="hero-logo-img">
                 <br>
                 <div class="typewriter-container">
@@ -608,7 +608,6 @@
             </div>
 
             <div class="projects-grid">
-                
                 <!-- PROYECTO 1: PITCHARCITY 5 -->
                 <div class="project-card" onclick="openSeries('Pitcharcity 5', 'Descubre la quinta entrega de la serie que lo cambió todo. Nuevos retos, mods optimizados y una experiencia inmersiva sin igual.', 'Por anunciar', 'assets/pitcharcity5.png', false)">
                     <div class="project-bg" style="background-image: url('assets/pitcharcity5.png');"></div>
@@ -657,7 +656,6 @@
                         <p class="project-author">by Orbit Crew</p>
                     </div>
                 </div>
-
             </div>
         </section>
 
@@ -675,7 +673,6 @@
             </div>
 
             <div class="stats-row glass-panel" id="detail-stats-container">
-                <!-- Se oculta si es "Próximamente", o se muestran stats en 0 si no -->
                 <div><span>Pico de viewers</span> <strong id="detail-peak">0</strong></div>
                 <div><span>Promedio de viewers</span> <strong id="detail-avg">0</strong></div>
                 <div><span>Horas visualizadas</span> <strong id="detail-total-hours">0</strong></div>
@@ -686,10 +683,7 @@
             <p id="detail-desc" style="margin-bottom: 40px; font-size: 1.15rem; line-height: 1.7; max-width: 900px; color: #eee;"></p>
 
             <div class="video-container">
-                <!-- AQUÍ VA EL IFRAME DE YOUTUBE O VIDEO LOCAL -->
                 <span id="video-placeholder">Espacio para Video/Trailer</span>
-                <!-- Ejemplo de cómo poner un video local si lo prefieres: -->
-                <!-- <video controls src="assets/trailer.mp4" style="width: 100%; height: 100%;"></video> -->
             </div>
         </section>
 
@@ -699,13 +693,13 @@
                 <h1 class="download-title">Descargar Orbit Client<br>para Windows</h1>
                 <p class="download-subtitle">El Orbit Client es un launcher de Minecraft que te permite unirte a nuestros eventos, servidores públicos y privados, además de mantener nuestros mods actualizados, todo en un paquete fácil de usar.</p>
                 
-                <button class="btn-download" style="font-size: 1.2rem !important; padding: 15px 35px; margin: 0 auto; border-radius: 50px;">
+                <!-- ENLACE DE DESCARGA OFICIAL -->
+                <a href="https://github.com/Di-Innocentis/instancias_black_launcher/releases/download/setup2.0/Orbit.Client.Setup.0.2.0.exe" class="btn-download" style="font-size: 1.2rem !important; padding: 15px 35px; margin: 0 auto; border-radius: 50px; display: inline-flex; width: fit-content;">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                     Descargar para Windows
-                </button>
+                </a>
 
                 <div class="mockup-container">
-                    <!-- AQUÍ VA TU MOCKUP DEL LAUNCHER -->
                     <img src="assets/orbit_launcher_mockup.png" alt="Mockup del Launcher Orbit">
                 </div>
 
@@ -734,7 +728,7 @@
             </div>
         </section>
 
-        <!-- VISTA: ABOUT (Estilo exacto LunaPixel Studios) -->
+        <!-- VISTA: ABOUT (ESTILO LUNAPIXEL) -->
         <section id="about" class="view">
             <div class="about-lunapixel">
                 <h2 class="about-title">Who are Orbit Crew?</h2>
@@ -751,7 +745,6 @@
                     <h2 class="about-title" style="margin-bottom: 15px;">Need a server?</h2>
                     
                     <div class="server-banner-container">
-                        <!-- AQUÍ VA LA IMAGEN DE TU SPONSOR DE SERVIDORES -->
                         <img src="assets/server_sponsor_banner.png" alt="Server Sponsor">
                     </div>
                     
@@ -768,7 +761,6 @@
         </section>
         
         <footer>
-            <!-- AQUÍ VA TU LOGO PEQUEÑO PARA EL FOOTER -->
             <img src="assets/orbit_logo_footer.png" alt="Orbit Logo">
             <p>© 2026 Orbit Crew</p>
         </footer>
@@ -790,7 +782,6 @@
             document.getElementById('detail-desc').innerText = desc;
             document.getElementById('detail-date').innerText = date;
             
-            // Lógica para mostrar/ocultar barra de stats si es "Próximamente"
             const statsContainer = document.getElementById('detail-stats-container');
             if(isComingSoon) {
                 statsContainer.style.display = 'none';
@@ -803,7 +794,7 @@
             navigate('series-detail');
         }
 
-        // Generar gotas de lluvia/fondo espacial
+        // Generar gotas de lluvia
         function createRain() {
             const container = document.getElementById('rain');
             const dropCount = 60; 
