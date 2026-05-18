@@ -4,263 +4,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orbit Client | Orbit Crew Oficial</title>
+    <title>Orbit Crew | Producciones y Series</title>
     
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-    <div class="galaxy-bg" id="galaxy-bg"></div>
+    
+    <div class="app-container">
 
-    <header class="main-header">
-        <div class="container header-content">
+        <nav class="navbar glass">
+            <div class="brand">
+                <i class="fas fa-satellite"></i> Orbit Crew
+            </div>
+            <div class="nav-links">
+                <button class="nav-btn active">Inicio</button>
+                <button class="nav-btn">Series</button>
+                <button class="nav-btn">Producciones</button>
+                <button class="nav-btn">Noticias</button>
+                <button class="nav-btn">Idioma (ES)</button>
+            </div>
+        </nav>
+
+        <main class="main-showcase">
             
-            <div class="studio-brand" onclick="openView('home')">
-                <img src="assets/img/logo.png" alt="Orbit Crew Logo" style="height: 48px; width: auto; object-fit: contain; filter: drop-shadow(0 0 8px rgba(255,255,255,0.2));">
-            </div>
+            <div class="series-panel glass">
+                <h1 class="hero-title">ORBIT CREW PRESENTA</h1>
+                <h2 class="hero-subtitle">Las mejores series de Latinoamérica</h2>
 
-            <div style="display: flex; align-items: center; gap: 2rem;">
-                <nav class="nav-menu">
-                    <button class="nav-link active" id="btn-home" onclick="openView('home')">Inicio</button>
-                    <button class="nav-link" id="btn-projects" onclick="openView('projects')">Instancias</button>
-                    <button class="nav-link" id="btn-download" onclick="openView('download')">Descargas</button>
-                </nav>
+                <h3 class="section-title">THE CORE: EL REGRESO</h3>
 
-                <div class="lang-dropdown">
-                    <button class="lang-btn" onclick="toggleLangMenu()">
-                        <i class="fas fa-globe"></i> <span id="current-lang">ES</span> <i class="fas fa-chevron-down" style="font-size: 0.8rem; opacity: 0.7;"></i>
-                    </button>
-                    <div class="lang-menu" id="lang-menu">
-                        <a href="#" class="lang-item" onclick="changeLanguage('es')">Español</a>
-                        <a href="#" class="lang-item" onclick="changeLanguage('en')">English</a>
-                        <a href="#" class="lang-item" onclick="changeLanguage('fr')">Français</a>
-                        <a href="#" class="lang-item" onclick="changeLanguage('pt')">Português</a>
-                        <a href="#" class="lang-item" onclick="changeLanguage('it')">Italiano</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </header>
-
-    <main class="container" style="margin-top: 2rem; flex: 1;">
-
-        <section id="view-home" class="view-section active-view">
-            <div class="about-section">
-                <div class="about-container">
+                <div class="episodes-grid">
                     
-                    <div class="about-text">
-                        <div class="comparison-badge">
-                            <i class="fas fa-satellite-dish"></i> Evolución Tecnológica Activa
-                        </div>
-                        <h1 class="product-highlight">ORBIT<br>CLIENT</h1>
-                        <p class="subtitle">La evolución premium en optimización y gestión de instancias.</p>
-                        <p class="bio">
-                            Diseñado bajo la arquitectura de vanguardia de Orbit Crew. Un entorno monocromático impecable, sincronización remota ultrarrápida en tiempo real y seguridad encriptada de grado militar para tu ecosistema de mods.
-                        </p>
-                        <div class="button-group">
-                            <button class="cta-button" onclick="openView('download')">
-                                <i class="fas fa-download"></i> Obtener Cliente
-                            </button>
-                            <button class="cta-button secondary" onclick="openView('projects')">
-                                <i class="fas fa-cubes"></i> Ver Instancias
-                            </button>
-                        </div>
+                    <div class="episode-card">
+                        <div class="episode-title">INTRODUCING THE CREW: THE END.</div>
+                        <i class="fas fa-satellite episode-icon"></i>
+                        <button class="btn-stream">VER SERIE</button>
                     </div>
 
-                    <div class="about-image">
-                        <div class="image-wrapper">
-                            <i class="fas fa-circle-notch logo-placeholder"></i>
-                        </div>
+                    <div class="episode-card">
+                        <div class="episode-title">THE FINAL BATTLE</div>
+                        <i class="fas fa-shield-halved episode-icon"></i>
+                        <button class="btn-stream outline">VER SERIE</button>
+                    </div>
+
+                    <div class="episode-card">
+                        <div class="episode-title">EXPLORING BEYOND</div>
+                        <i class="fas fa-globe-americas episode-icon"></i>
+                        <button class="btn-stream outline">STREAM NOW</button>
+                    </div>
+
+                    <div class="episode-card">
+                        <div class="episode-title">SURVIVAL CHRONICLES</div>
+                        <i class="fas fa-tools episode-icon"></i>
+                        <button class="btn-stream outline">STREAM NOW</button>
+                    </div>
+
+                    <div class="episode-card">
+                        <div class="episode-title">THE NEW BEGINNING</div>
+                        <i class="fas fa-hand-holding-seedling episode-icon"></i>
+                        <button class="btn-stream outline">STREAM NOW</button>
                     </div>
 
                 </div>
             </div>
 
-            <div class="marquee-container">
-                <div class="marquee-track">
-                    <span class="marquee-content">Orbit Crew Ecosystem <span class="dot">•</span> Premium Performance <span class="dot">•</span> Remote Management Enabled <span class="dot">•</span> Decrypted Vault Secure</span>
-                    <span class="marquee-content">Orbit Crew Ecosystem <span class="dot">•</span> Premium Performance <span class="dot">•</span> Remote Management Enabled <span class="dot">•</span> Decrypted Vault Secure</span>
-                </div>
+            <div class="character-panel glass">
+                <img src="https://minotar.net/armor/body/Notch/400.png" alt="Personaje Principal" class="character-render">
             </div>
 
-            <div class="projects-section fade-in-up">
-                <div class="section-header">
-                    <h3>Ingeniería del Cliente</h3>
-                    <p>Tecnología avanzada integrada en una interfaz de cristal translúcido.</p>
-                </div>
-                
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="card-icon"><i class="fas fa-shield-halved"></i></div>
-                        <h3>Bóveda de Seguridad</h3>
-                        <p>Los mods y credenciales se procesan desencriptándose estrictamente en memoria y directo al disco, protegiendo la identidad del software.</p>
-                    </div>
-                    <div class="project-card">
-                        <div class="card-icon"><i class="fas fa-cloud-arrow-down"></i></div>
-                        <h3>Sincronización Remota</h3>
-                        <p>Actualizaciones inmediatas mediante lectura secuencial de configuraciones desde nuestros servidores centrales indexados.</p>
-                    </div>
-                    <div class="project-card">
-                        <div class="card-icon"><i class="fas fa-language"></i></div>
-                        <h3>Estándar Global</h3>
-                        <p>Arquitectura completamente multilenguaje nativa, preparada para desplegarse globalmente en 5 idiomas diferentes en un clic.</p>
-                    </div>
-                </div>
-            </div>
+        </main>
 
-            <div class="ai-section fade-in-up delay-200">
-                <div class="container">
-                    <div class="section-header">
-                        <h3>El Oráculo de Orbit</h3>
-                        <p>¿No sabes qué jugar? Deja que nuestra IA analice tus gustos y ensamble tu configuración ideal.</p>
-                    </div>
-                    <div class="ai-grid">
-                        <div class="ai-input-area">
-                            <h4><i class="fas fa-terminal"></i> Parámetros de Entrada</h4>
-                            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">Describe qué tipo de aventura buscas (ej: fantasía medieval, automatización técnica, terror de supervivencia...)</p>
-                            <textarea id="ai-prompt" class="ai-textarea" placeholder="Escribe tus preferencias aquí..."></textarea>
-                            <button class="cta-button" onclick="consultAI()">
-                                <span>Consultar Oráculo</span>
-                                <div class="loader" id="ai-loader"></div>
-                            </button>
-                        </div>
-                        <div class="ai-output-area">
-                            <h4><i class="fas fa-microchip"></i> Configuración Recomendada</h4>
-                            <div id="ai-output" style="color: var(--text-muted); font-size: 1rem; line-height: 1.8;">
-                                <span style="opacity: 0.5; font-style: italic;">El Oráculo está esperando tus instrucciones...</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="contact-box fade-in-up delay-300">
-                <h3>Comunidad de Desarrollo</h3>
-                <p>¿Quieres reportar un bug, sugerir características o unirte a los eventos oficiales del Orbit Crew?</p>
-                <a href="https://discord.gg/orbitcrew" target="_blank" class="cta-button secondary" style="border-color: rgba(255,255,255,0.15)">
-                    <i class="fab fa-discord"></i> Conectarse a Discord
-                </a>
-            </div>
-        </section>
-
-        <section id="view-projects" class="view-section">
-            <div class="carousel-container">
-                <button class="carousel-nav prev" onclick="moveCarousel('prev')"><i class="fas fa-chevron-left"></i></button>
-                
-                <div class="carousel-track-container">
-                    <ul class="carousel-track" id="carousel-track">
-                        <li class="carousel-slide current-slide">
-                            <img src="assets/img/slide1.jpg" alt="Vanilla Evolution">
-                            <div class="slide-caption">
-                                <h3>Vanilla Evolution</h3>
-                                <p>Optimización absoluta sobre el entorno base con mejoras visuales monocromáticas y rendimiento pulido.</p>
-                            </div>
-                        </li>
-                        <li class="carousel-slide">
-                            <img src="assets/img/slide2.jpg" alt="Orbit Tech Vault">
-                            <div class="slide-caption">
-                                <h3>Orbit Tech Vault</h3>
-                                <p>Automatización industrial masiva avanzada. Ingeniería pesada sin pérdidas de frames de memoria.</p>
-                            </div>
-                        </li>
-                        <li class="carousel-slide">
-                            <img src="assets/img/slide3.jpg" alt="Anarchy Core">
-                            <div class="slide-caption">
-                                <h3>Anarchy Core</h3>
-                                <p>Entorno competitivo de alta fidelidad con protección de red integrada y carga secuencial balanceada.</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <button class="carousel-nav next" onclick="moveCarousel('next')"><i class="fas fa-chevron-right"></i></button>
-
-                <div class="carousel-nav-dots" id="carousel-dots">
-                    <button class="current-dot" onclick="jumpToSlide(0)"></button>
-                    <button onclick="jumpToSlide(1)"></button>
-                    <button onclick="jumpToSlide(2)"></button>
-                </div>
-            </div>
-        </section>
-
-        <section id="view-download" class="view-section">
-            <div class="download-card">
-                <div class="card-icon" style="font-size: 3.5rem; margin-bottom: 1rem;"><i class="fas fa-box-open"></i></div>
-                <h2 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 5px;">Desplegar Orbit Client</h2>
-                <div class="download-version">PRODUCCIÓN ESTABLE v2.0.4</div>
-                
-                <p style="color: var(--text-muted); max-width: 500px; margin: 0 auto 1.5rem auto;">
-                    Descarga el ejecutable nativo del cliente con el nuevo panel administrativo y soporte de instancias en la nube integrado.
-                </p>
-
-                <a href="#" class="download-btn-main">
-                    <i class="fab fa-windows"></i> Descargar para Windows (x64)
-                </a>
-
-                <div class="download-options">
-                    <a href="#" class="dl-option"><i class="fab fa-apple"></i> macOS Installer</a>
-                    <a href="#" class="dl-option"><i class="fab fa-linux"></i> Linux Universal AppImage</a>
-                    <a href="#" class="dl-option"><i class="fas fa-code-branch"></i> Código Fuente (GitHub)</a>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="main-footer">
-        <div class="container">
-            <p>&copy; 2026 Orbit Crew. Todos los derechos reservados. Todas las marcas de identidad tecnológica e infraestructura de red están protegidas bajo leyes internacionales de propiedad intelectual.</p>
-            <div class="social-links">
-                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-            </div>
-        </div>
-    </footer>
-
-    <div class="floating-chat" onclick="openModal('review')">
-        <i class="fas fa-comment-dots"></i>
-    </div>
-
-    <div id="modal-review" class="modal-overlay">
-        <div class="modal-box">
-            <button class="close-icon" onclick="closeModal('review')"><i class="fas fa-times"></i></button>
+        <div class="bottom-widgets">
             
-            <h3>Enviar Calificación</h3>
-            <p class="modal-desc">Tu feedback optimiza directamente los módulos de desarrollo de Orbit Client.</p>
-            
-            <div class="rating-stars" id="rating-container">
-                <i class="far fa-star" data-val="1" onclick="setRating(1)"></i>
-                <i class="far fa-star" data-val="2" onclick="setRating(2)"></i>
-                <i class="far fa-star" data-val="3" onclick="setRating(3)"></i>
-                <i class="far fa-star" data-val="4" onclick="setRating(4)"></i>
-                <i class="far fa-star" data-val="5" onclick="setRating(5)"></i>
+            <div class="widget-panel glass">
+                <h3 class="widget-title">Latest Series</h3>
+                
+                <div class="latest-series-list">
+                    <div class="latest-series-item">
+                        <div class="play-btn">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <div class="series-info">
+                            <h4>INTRODUCING THE CREW:<br>THE END.</h4>
+                        </div>
+                    </div>
+
+                    <div class="latest-series-item">
+                        <div class="play-btn" style="background: transparent; border: 2px solid var(--text-dark); color: var(--text-dark);">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <div class="series-info">
+                            <h4 style="color: var(--text-muted);">PITCHARCITY:<br>MAGIC WORLD</h4>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="modal-body" style="margin-top: 1.5rem;">
-                <div style="margin-bottom: 1.2rem;">
-                    <label for="review-name">Desarrollador / Usuario</label>
-                    <input type="text" id="review-name" class="input-dark" placeholder="Tu nombre o nick de Minecraft">
-                </div>
+            <div class="widget-panel glass">
+                <h3 class="widget-title">Community Hub</h3>
                 
-                <div>
-                    <label for="review-comment">Reporte / Experiencia</label>
-                    <textarea id="review-comment" class="input-dark area" placeholder="¿Cómo calificarías el rendimiento del launcher?..."></textarea>
+                <div class="hub-grid">
+                    <a href="#" class="hub-card">
+                        <i class="fas fa-cube"></i>
+                        Minecraft
+                    </a>
+                    
+                    <a href="#" class="hub-card">
+                        <i class="fab fa-twitch"></i>
+                        Twitch
+                    </a>
+                    
+                    <a href="#" class="hub-card">
+                        <i class="fab fa-youtube"></i>
+                        YouTube
+                    </a>
                 </div>
-                
-                <button class="btn-action review-submit" onclick="submitReview()">
-                    Enviar Módulo de Calificación
-                </button>
             </div>
+
         </div>
+
     </div>
 
     <script src="scripts.js"></script>
-</body>
 
+</body>
 </html>
