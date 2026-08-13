@@ -147,7 +147,8 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
         }
-        
+
+        /* ESTILO DEL BOTÓN DE RAVEN */
         .btn-download.raven {
             background-color: var(--primary-purple);
             color: #fff !important;
@@ -434,8 +435,43 @@
             font-size: 1.1rem;
             color: var(--text-muted);
             max-width: 700px;
-            margin: 0 auto 40px;
+            margin: 0 auto 30px;
             line-height: 1.6;
+        }
+
+        .clients-container {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            align-items: stretch;
+            flex-wrap: wrap;
+            margin: 0 auto 50px;
+            background: rgba(20, 25, 30, 0.4);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid var(--glass-border);
+            max-width: 900px;
+        }
+
+        .client-box {
+            flex: 1;
+            min-width: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .client-box h3 {
+            font-family: var(--font-title);
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            height: 40px;
+            display: flex;
+            align-items: center;
         }
 
         .mockup-container {
@@ -603,7 +639,7 @@
             <a class="nav-item" onclick="navigate('about')">About</a>
             <button onclick="navigate('download')" class="btn-download">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                Descargar Cliente
+                Descargar Clientes
             </button>
         </nav>
     </header>
@@ -699,33 +735,43 @@
             </div>
         </section>
 
-        <!-- VISTA: DESCARGA -->
+        <!-- VISTA: DESCARGA (CORREGIDA CON AMBOS CLIENTES) -->
         <section id="download" class="view">
             <div class="download-center">
-                <h1 class="download-title">Descargar Orbit Client<br>para Windows</h1>
-                <p class="download-subtitle">El Orbit Client es un launcher de Minecraft que te permite unirte a nuestros eventos, servidores públicos y privados, además de mantener nuestros mods actualizados, todo en un paquete fácil de usar.</p>
+                <h1 class="download-title">Descargar Clientes<br>para Windows</h1>
+                <p class="download-subtitle">Elige qué cliente deseas instalar. Ambos te permitirán unirte a nuestros eventos, servidores y mantener los mods actualizados.</p>
                 
-                <!-- CONTENEDOR DE ENLACES DE DESCARGA -->
-                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px;">
-                    <!-- ENLACE DE DESCARGA OFICIAL ORBIT -->
-                    <a href="https://github.com/Di-Innocentis/instancias_black_launcher/releases/download/setup2.0/Orbit.Client.Setup.0.2.0.exe" class="btn-download" style="font-size: 1.2rem !important; padding: 15px 35px; border-radius: 50px; display: inline-flex; width: fit-content;">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                        Descargar Orbit Client
-                    </a>
+                <!-- CAJA DESTACADA PARA LOS DOS CLIENTES -->
+                <div class="clients-container">
+                    
+                    <!-- ORBIT CLIENT -->
+                    <div class="client-box">
+                        <h3 style="color: var(--primary-green);">Orbit Client</h3>
+                        <p style="color: #ccc; font-size: 0.9rem; margin-bottom: 20px;">El launcher principal de Orbit Crew.</p>
+                        <a href="https://github.com/Di-Innocentis/instancias_black_launcher/releases/download/setup2.0/Orbit.Client.Setup.0.2.0.exe" class="btn-download" style="font-size: 1.1rem !important; padding: 15px 25px; border-radius: 50px; width: 100%;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                            Descargar Orbit
+                        </a>
+                    </div>
 
-                    <!-- ENLACE DE DESCARGA RAVEN CLIENT -->
-                    <a href="https://github.com/Di-Innocentis/instancias_black_launcher/releases/download/setup2.0/Raven.Client.Setup.0.3.0.exe" class="btn-download raven" style="font-size: 1.2rem !important; padding: 15px 35px; border-radius: 50px; display: inline-flex; width: fit-content;">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                        Descargar Raven Client v0.3.0
-                    </a>
+                    <!-- RAVEN CLIENT -->
+                    <div class="client-box">
+                        <h3 style="color: var(--primary-purple);">Raven Client</h3>
+                        <p style="color: #ccc; font-size: 0.9rem; margin-bottom: 20px;">El cliente alternativo versión 0.3.0.</p>
+                        <a href="https://github.com/Di-Innocentis/instancias_black_launcher/releases/download/setup2.0/Raven.Client.Setup.0.3.0.exe" class="btn-download raven" style="font-size: 1.1rem !important; padding: 15px 25px; border-radius: 50px; width: 100%;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                            Descargar Raven
+                        </a>
+                    </div>
+
                 </div>
 
                 <div class="mockup-container">
-                    <img src="assets/orbit_launcher_mockup.png" alt="Mockup del Launcher Orbit">
+                    <img src="assets/orbit_launcher_mockup.png" alt="Mockup del Launcher">
                 </div>
 
-                <h3 style="font-size: 1.8rem; margin-bottom: 10px;">Todas las Opciones de Descarga</h3>
-                <p style="color: var(--text-muted);">El cliente Orbit está disponible en varias plataformas de escritorio.</p>
+                <h3 style="font-size: 1.8rem; margin-bottom: 10px;">Otras plataformas</h3>
+                <p style="color: var(--text-muted);">Los clientes están disponibles en varias plataformas de escritorio.</p>
                 
                 <div class="os-columns">
                     <div class="os-item glass-panel">
