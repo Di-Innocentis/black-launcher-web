@@ -16,6 +16,8 @@
             --glass-border: rgba(255, 255, 255, 0.1);
             --primary-green: #2ecc71;
             --primary-green-hover: #27ae60;
+            --primary-purple: #9b59b6;
+            --primary-purple-hover: #8e44ad;
             --text-main: #ffffff;
             --text-muted: #aaaaaa;
             --font-pixel: 'VT323', monospace;
@@ -144,6 +146,16 @@
             background-color: var(--primary-green-hover);
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
+        }
+        
+        .btn-download.raven {
+            background-color: var(--primary-purple);
+            color: #fff !important;
+        }
+
+        .btn-download.raven:hover {
+            background-color: var(--primary-purple-hover);
+            box-shadow: 0 4px 15px rgba(155, 89, 182, 0.4);
         }
 
         /* Vistas (SPA) */
@@ -693,11 +705,20 @@
                 <h1 class="download-title">Descargar Orbit Client<br>para Windows</h1>
                 <p class="download-subtitle">El Orbit Client es un launcher de Minecraft que te permite unirte a nuestros eventos, servidores públicos y privados, además de mantener nuestros mods actualizados, todo en un paquete fácil de usar.</p>
                 
-                <!-- ENLACE DE DESCARGA OFICIAL -->
-                <a href="https://github.com/Di-Innocentis/instancias_black_launcher/releases/download/setup2.0/Orbit.Client.Setup.0.2.0.exe" class="btn-download" style="font-size: 1.2rem !important; padding: 15px 35px; margin: 0 auto; border-radius: 50px; display: inline-flex; width: fit-content;">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                    Descargar para Windows
-                </a>
+                <!-- CONTENEDOR DE ENLACES DE DESCARGA -->
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px;">
+                    <!-- ENLACE DE DESCARGA OFICIAL ORBIT -->
+                    <a href="https://github.com/Di-Innocentis/instancias_black_launcher/releases/download/setup2.0/Orbit.Client.Setup.0.2.0.exe" class="btn-download" style="font-size: 1.2rem !important; padding: 15px 35px; border-radius: 50px; display: inline-flex; width: fit-content;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        Descargar Orbit Client
+                    </a>
+
+                    <!-- ENLACE DE DESCARGA RAVEN CLIENT -->
+                    <a href="https://github.com/Di-Innocentis/instancias_black_launcher/releases/download/setup2.0/Raven.Client.Setup.0.3.0.exe" class="btn-download raven" style="font-size: 1.2rem !important; padding: 15px 35px; border-radius: 50px; display: inline-flex; width: fit-content;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        Descargar Raven Client v0.3.0
+                    </a>
+                </div>
 
                 <div class="mockup-container">
                     <img src="assets/orbit_launcher_mockup.png" alt="Mockup del Launcher Orbit">
